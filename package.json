@@ -1,0 +1,22 @@
+{
+  "name": "quest-cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "start": "sanity start",
+    "deploy": "sanity deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@sanity/client": "^7.11.2",
+    "@sanity/vision": "^4.10.1",
+    "sanity": "^4.10.1"
+  }
+}
