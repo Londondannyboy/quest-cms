@@ -115,6 +115,8 @@ SANITY_API_TOKEN=skZw5uQGgMH9HxvfdqhJzhpty93mtuaynRDkprQ4yAzBrAQOKEgb3iCYkk4dafi
 1. **quest-relocation**
    - Repository: https://github.com/Londondannyboy/relocation-quest
    - Production: https://relocation.quest
+   - Studio: https://relocation-quest.sanity.studio (Original blog content)
+   - Integration: Hybrid approach - queries both old and universal schemas
 
 2. **quest-placement**
    - Repository: https://github.com/Londondannyboy/placement-quest
