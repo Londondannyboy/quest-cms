@@ -6,4 +6,7 @@ export default defineCliConfig({
     dataset: 'production',
   },
   studioHost: 'quest-cms',
+  deployment: {
+    appId: 'u1qnqwsivscba8morgwpkzv1',
+  },
 })
