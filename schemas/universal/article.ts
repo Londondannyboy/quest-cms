@@ -117,12 +117,6 @@ export default defineType({
             }),
           ],
         },
-        {
-          type: 'code',
-          options: {
-            language: 'javascript',
-          },
-        },
       ],
     }),
 
