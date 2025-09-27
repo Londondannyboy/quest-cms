@@ -25,12 +25,14 @@ const article = {
 {
   contexts: ['APP-NAME-quest'],  // CRITICAL - Never empty
   featuredImage: { ... },  // REQUIRED - Get image first
+  thumbnailVideo: 'mux-playback-id',  // Optional - For video thumbnails
   categories: ['cat1', 'cat2'],  // Minimum 2 categories
   tags: ['tag1', 'tag2', 'tag3'],  // Minimum 3 tags
   publishedAt: new Date().toISOString(),  // Always set
   author: { _ref: 'editorial-team' },  // Create author first
+  focusKeyword: 'primary keyword',  // Primary SEO keyword
   seoTitle: 'SEO Title - 60 chars max',
-  seoDescription: 'Meta description - 160 chars max',
+  metaDescription: 'Meta description - 160 chars max',
   excerpt: 'Summary - 200-300 chars'
 }
 ```
