@@ -3,6 +3,43 @@
 ## Purpose
 This document provides the exact process for creating content that has ZERO broken links through a staged creation approach with MCP validation.
 
+## 🚨 CRITICAL WORKFLOW ORDER
+
+### 1. IMAGES FIRST - Before Creating Any Content!
+```javascript
+// STEP 1: Check Media Library for existing image
+const existing = await checkMediaLibrary('topic-name');
+
+// STEP 2: If not found, create new
+const image = existing || await createFromUnsplash('topic-name');
+
+// STEP 3: THEN create content with image ready
+const article = {
+  featuredImage: image, // Already have it!
+  // ... rest of content
+}
+```
+
+### 2. MANDATORY FIELDS - Never Leave Empty
+```javascript
+{
+  contexts: ['APP-NAME-quest'],  // CRITICAL - Never empty
+  featuredImage: { ... },  // REQUIRED - Get image first
+  categories: ['cat1', 'cat2'],  // Minimum 2 categories
+  tags: ['tag1', 'tag2', 'tag3'],  // Minimum 3 tags
+  publishedAt: new Date().toISOString(),  // Always set
+  author: { _ref: 'editorial-team' },  // Create author first
+  seoTitle: 'SEO Title - 60 chars max',
+  seoDescription: 'Meta description - 160 chars max',
+  excerpt: 'Summary - 200-300 chars'
+}
+```
+
+### 3. PUBLISH IMMEDIATELY
+- No drafts needed
+- Click "Publish" right away
+- Can always edit later
+
 ## 🎯 Content Creation Stages
 
 ### Stage 1: Foundation Pillar Content
