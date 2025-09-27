@@ -34,6 +34,8 @@ export default defineType({
       name: 'featuredImage',
       title: 'Featured Image',
       type: 'image',
+      description: 'REQUIRED: Main image for the article (check Media Library first)',
+      validation: (Rule) => Rule.required().error('Featured image is required'),
       options: {
         hotspot: true,
       },
@@ -49,6 +51,12 @@ export default defineType({
           type: 'string',
         }),
       ],
+    }),
+    defineField({
+      name: 'thumbnailVideo',
+      title: 'Thumbnail Video (Mux Playback ID)',
+      type: 'string',
+      description: 'Optional Mux video playback ID for video thumbnail',
     }),
 
     // Content
@@ -249,8 +257,29 @@ export default defineType({
 
     // SEO & Meta
     defineField({
+      name: 'focusKeyword',
+      title: 'Focus Keyword',
+      type: 'string',
+      description: 'Primary SEO keyword for this article',
+    }),
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO Title',
+      type: 'string',
+      description: 'Title for search engines (max 60 chars)',
+      validation: (Rule) => Rule.max(60),
+    }),
+    defineField({
+      name: 'metaDescription', 
+      title: 'Meta Description',
+      type: 'text',
+      rows: 2,
+      description: 'Description for search engines (max 160 chars)',
+      validation: (Rule) => Rule.max(160),
+    }),
+    defineField({
       name: 'seo',
-      title: 'SEO',
+      title: 'Additional SEO Settings',
       type: 'object',
       fields: [
         defineField({
