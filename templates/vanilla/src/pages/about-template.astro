@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnimatedSection from '../components/AnimatedSection.astro';
+
+const seoTitle = "About XXX_BRAND_NAME | XXX_BRIEF_DESCRIPTION";
+const seoDescription = "Learn about XXX_BRAND_NAME, XXX_VALUE_PROPOSITION.";
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  keywords="about XXX_APP_NAME, XXX_KEYWORDS"
+>
+  <section class="py-12 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
+    <div class="container mx-auto px-4">
+      <AnimatedSection>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">About XXX_BRAND_NAME</h1>
+        <p class="text-xl">XXX_TAGLINE</p>
+      </AnimatedSection>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <AnimatedSection>
+          <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+          <div class="prose prose-lg max-w-none">
+            <p>
+              XXX_MISSION_STATEMENT
+            </p>
+            <p>
+              XXX_ADDITIONAL_CONTEXT
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay="100">
+          <h2 class="text-3xl font-bold mb-6 mt-12">What We Provide</h2>
+          <div class="prose prose-lg max-w-none">
+            <ul>
+              <li><strong>XXX_SERVICE_1:</strong> XXX_SERVICE_1_DESCRIPTION</li>
+              <li><strong>XXX_SERVICE_2:</strong> XXX_SERVICE_2_DESCRIPTION</li>
+              <li><strong>XXX_SERVICE_3:</strong> XXX_SERVICE_3_DESCRIPTION</li>
+              <li><strong>XXX_SERVICE_4:</strong> XXX_SERVICE_4_DESCRIPTION</li>
+            </ul>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay="200">
+          <h2 class="text-3xl font-bold mb-6 mt-12">Our Approach</h2>
+          <div class="prose prose-lg max-w-none">
+            <p>
+              XXX_APPROACH_DESCRIPTION
+            </p>
+            <p>
+              XXX_DIFFERENTIATOR
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay="300">
+          <h2 class="text-3xl font-bold mb-6 mt-12">Who We Serve</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-lg mb-3">XXX_AUDIENCE_1</h3>
+              <p class="text-gray-700">
+                XXX_AUDIENCE_1_DESCRIPTION
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-lg mb-3">XXX_AUDIENCE_2</h3>
+              <p class="text-gray-700">
+                XXX_AUDIENCE_2_DESCRIPTION
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay="400">
+          <h2 class="text-3xl font-bold mb-6 mt-12">Contact Us</h2>
+          <div class="prose prose-lg max-w-none">
+            <p>
+              For inquiries about XXX_BRAND_NAME, please contact us at:
+            </p>
+            <p>
+              Email: info@XXX_DOMAIN<br/>
+              Phone: XXX_PHONE_NUMBER
+            </p>
+          </div>
+        </AnimatedSection>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!--
+ABOUT PAGE CHECKLIST:
+1. [ ] Replace all XXX_ placeholders
+2. [ ] Customize mission statement
+3. [ ] List actual services/features
+4. [ ] Define target audiences
+5. [ ] Add real contact information
+6. [ ] NO internal links in Stage 1
+-->
