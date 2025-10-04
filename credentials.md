@@ -11,12 +11,12 @@
 
 ### Railway Deployment
 ```bash
-# Railway deployment token for Quest-CMS project
-RAILWAY_TOKEN=22ada421-9487-45a3-b8cf-1ba21b9b39de
+# Railway deployment token for Quest-CMS project (Project-specific token)
+RAILWAY_TOKEN=b5c7226e-bbd6-429f-ba56-c2c8f62d1608
 
 # Railway project details
 RAILWAY_PROJECT_URL=https://quest-cms-production.railway.app
-RAILWAY_PROJECT_ID=[to be determined after GitHub connection]
+RAILWAY_PROJECT_ID=b5c7226e-bbd6-429f-ba56-c2c8f62d1608
 ```
 
 ### GitHub Repository

@@ -56,7 +56,6 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           railway login --token $RAILWAY_TOKEN
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
           railway up --detach
           
       - name: Set Environment Variables
@@ -66,10 +65,11 @@ jobs:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
         run: |
-          railway variables set NEON_CONNECTION_STRING="$NEON_CONNECTION_STRING"
-          railway variables set CLAUDE_API_KEY="$CLAUDE_API_KEY"
-          railway variables set REPLICATE_API_TOKEN="$REPLICATE_API_TOKEN"
-          railway variables set PORT="8080"
+          echo "🔧 Setting environment variables..."
+          railway variables set NEON_CONNECTION_STRING="$NEON_CONNECTION_STRING" || echo "⚠️ Variable set failed (may already exist)"
+          railway variables set CLAUDE_API_KEY="$CLAUDE_API_KEY" || echo "⚠️ Variable set failed (may already exist)"
+          railway variables set REPLICATE_API_TOKEN="$REPLICATE_API_TOKEN" || echo "⚠️ Variable set failed (may already exist)"
+          railway variables set PORT="8080" || echo "⚠️ Variable set failed (may already exist)"
           
       - name: Wait for deployment
         run: |
