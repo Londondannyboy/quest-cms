@@ -1,1 +1,1 @@
-web: python3 simple_demo.py
+web: python3 working_demo.py
