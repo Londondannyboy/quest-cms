@@ -323,14 +323,20 @@ def view_article(article_id: str):
 @ui.page('/health')
 def health_check():
     """Health check endpoint"""
-    ui.json({
+    import json
+    from fastapi import Response
+    
+    health_data = {
         'status': 'healthy',
         'mode': 'demo',
         'version': 'Quest-CMS v1.0 (Working)',
         'features': ['admin_interface', 'content_editor', 'review_workflow', 'crud_operations'],
         'database': 'demo_data',
         'ai_services': 'demo_mode'
-    })
+    }
+    
+    # Return JSON response instead of using ui.json which doesn't exist
+    ui.markdown(f'```json\n{json.dumps(health_data, indent=2)}\n```')
 
 # Helper functions
 def get_article_stats():
@@ -400,17 +406,26 @@ def show_review_dialog(article):
     dialog.open()
 
 if __name__ in {"__main__", "__mp_main__"}:
-    print("🚀 Starting Quest-CMS WORKING Demo")
-    print("📝 Admin Interface: http://localhost:8080/admin")
+    import os
+    
+    # Production vs Development configuration
+    is_production = os.getenv('RAILWAY_ENVIRONMENT') is not None or os.getenv('PORT') is not None
+    
+    print("🚀 Starting Quest-CMS")
+    if is_production:
+        print("🌐 Production Mode")
+    else:
+        print("💻 Development Mode")
+        print("📝 Admin Interface: http://localhost:8080/admin")
     print("✅ All CRUD operations functional")
     print("🔧 Fixed NiceGUI 3.0 compatibility issues")
     print("🎯 Ready for production deployment")
     
     ui.run(
-        title='Quest CMS - Working Demo',
-        port=8080,
+        title='Quest CMS - AI Content Management System',
+        port=int(os.getenv('PORT', 8080)),
         host='0.0.0.0',
-        reload=True,
+        reload=not is_production,  # Disable reload in production
         show=False,
         favicon='🚀'
     )
